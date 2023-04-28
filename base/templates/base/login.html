@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<div class = "header-bar">
+	<h1>Login</h1>
+</div>
+<div class = "form-styling">
+	<form method = "POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input class = "button" type = "submit" value = "Login"/>
+		<p>Wanna create an account? <a href = "{% url 'register' %}">Register</a></p>
+	</form>
+</div>
+
+{% endblock content %}

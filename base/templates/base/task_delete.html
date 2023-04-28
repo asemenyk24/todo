@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<div class = "header-bar">
+	<a href = "{% url 'tasks' %}">Go back</a>
+</div>
+
+<div class = "form-styling">
+	<form method = "POST">
+	{% csrf_token %}
+	<p>Task will be deleted permanently! Are you sure? "{{ task }}"</p>
+	<input class = "button" type = "submit" value = "Delete"/>
+</form>
+</div>
+
+{% endblock content %}
